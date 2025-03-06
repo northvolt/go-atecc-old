@@ -10,10 +10,16 @@
 
 Package atecc is a driver for the Microchip ATECC608 device in Go.
 
-It supports communication using I²C.
+It supports communication using I²C and USB for dev kits.
 
 > :warning: The API is not fully stable and may still be changed until we
 > publish version 1.0.
+
+## Availability
+
+Cross compiling to a different platform or architecture entails disabling cgo
+by default in Go. If cgo is disabled, the USB support is also disabled. For
+further details, see the [usb package](https://github.com/karalabe/usb).
 
 ## Datasheets
 

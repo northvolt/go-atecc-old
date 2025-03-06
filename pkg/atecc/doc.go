@@ -1,6 +1,6 @@
 // Package atecc is a driver for the MicrochipTech ATECC608 device in Go.
 //
-// It supports communication using I²C.
+// It supports communication using I²C and USB.
 //
 // This code is based on MicrochipTech's Cryptoauthlib code, thus its original
 // copyright is retained for this code.
