@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.0](https://github.com/northvolt/go-atecc/compare/v0.0.1...v0.1.0) (2025-03-06)
+
+
+### Features
+
+* remove usb ([1b31cde](https://github.com/northvolt/go-atecc/commit/1b31cdedce3fbd6eb7f24a216b4afd75ca63be81))
+* remove usb ([1b31cde](https://github.com/northvolt/go-atecc/commit/1b31cdedce3fbd6eb7f24a216b4afd75ca63be81))
+* remove usb ([12b7555](https://github.com/northvolt/go-atecc/commit/12b7555cfaf6896266ad961a6e83e3a5dfb7b627))
+
 ## 0.0.1 (2024-08-28)
 
 
