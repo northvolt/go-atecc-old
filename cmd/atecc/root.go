@@ -46,13 +46,4 @@ func newRootCmd() (*ffcli.Command, *rootConfig) {
 	}), &cfg
 }
 
-var ateccLongHelp = `
-
-GENERAL
-If you use one of the dev kits with multiple secure elements, specify the device
-identity to choose a specific element. Specify it similar to a I²C address or
-use one of the common names for the configurations:
-
-  TNGTLS     0x35 (0x6a)
-  TFLXTLS    0x36 (0x6c)
-  MAHDA      0x60 (0xc0)`
+var ateccLongHelp = ``
