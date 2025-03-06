@@ -5,7 +5,6 @@ import (
 	"crypto"
 	"crypto/x509"
 	"encoding/pem"
-	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -25,17 +24,6 @@ const (
 )
 
 func newATECC(ctx context.Context, c *rootConfig) (*atecc.Dev, io.Closer, error) {
-	switch c.iface {
-	case "i2c":
-		return newATECC_I2C(ctx, c)
-	case "hid":
-		return newATECC_HID(ctx, c)
-	default:
-		return nil, nil, errors.New("atecc: unknown interface")
-	}
-}
-
-func newATECC_I2C(ctx context.Context, c *rootConfig) (*atecc.Dev, io.Closer, error) {
 	i2cAddress, err := getI2CAddress(c.addr, c.trustPlatformFormat)
 	if err != nil {
 		return nil, nil, err
@@ -56,20 +44,6 @@ func newATECC_I2C(ctx context.Context, c *rootConfig) (*atecc.Dev, io.Closer, er
 	return d, bus, err
 }
 
-func newATECC_HID(ctx context.Context, c *rootConfig) (*atecc.Dev, io.Closer, error) {
-	identity, err := getHIDDeviceIdentity(c.devIdentity, c.trustPlatformFormat)
-	if err != nil {
-		return nil, nil, err
-	}
-
-	cfg := atecc.ConfigATECCX08A_KitHIDDefault()
-	cfg.Debug = newLogger(c.verbose)
-	cfg.HID.DevIndex = c.devIndex
-	cfg.HID.DevIdentity = identity
-
-	return atecc.NewHIDDev(ctx, cfg)
-}
-
 func getI2CAddress(addrStr string, trustPlatformFormat bool) (uint16, error) {
 	if addrStr == "" {
 		return defaultI2CAddress, nil
@@ -83,39 +57,6 @@ func getI2CAddress(addrStr string, trustPlatformFormat bool) (uint16, error) {
 		return uint16(addr >> 1), nil
 	} else {
 		return uint16(addr), nil
-	}
-}
-
-func hidDeviceIdentityToString(idStr string) (uint16, error) {
-	switch strings.ToUpper(idStr) {
-	case "TNGTLS":
-		return 0x35, nil
-	case "TFLXTLS":
-		return 0x36, nil
-	case "MAHDA":
-		return 0x60, nil
-	default:
-		return 0, errors.New("atecc: unknown HID device identity")
-	}
-}
-
-func getHIDDeviceIdentity(idStr string, trustPlatformFormat bool) (uint8, error) {
-	if idStr == "" {
-		return defaultDeviceIdentity, nil
-	}
-	id, err := hidDeviceIdentityToString(idStr)
-	if err != nil {
-		id64, err := strconv.ParseUint(strings.TrimPrefix(idStr, "0x"), 16, 16)
-		if err != nil {
-			return 0, err
-		}
-		id = uint16(id64)
-	}
-
-	if trustPlatformFormat {
-		return uint8(id), nil
-	} else {
-		return uint8(id << 1), nil
 	}
 }
 

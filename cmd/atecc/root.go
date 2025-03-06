@@ -9,7 +9,6 @@ import (
 
 type rootConfig struct {
 	verbose             bool
-	iface               string
 	bus                 int
 	addr                string
 	trustPlatformFormat bool
@@ -20,10 +19,8 @@ type rootConfig struct {
 
 func (c *rootConfig) registerFlags(fs *flag.FlagSet) {
 	fs.BoolVar(&c.verbose, "v", false, "increase log verbosity")
-	fs.StringVar(&c.iface, "i", "i2c", "interface type, hid or i2c")
 	fs.IntVar(&c.bus, "bus", 0, "i2c bus to use")
 	fs.StringVar(&c.addr, "addr", "", "i2c address in hex")
-	// fs.StringVar(&c.devInterface, "dev-interface", "auto", "dev kit interface type")
 	// TODO: fallback to i2c address (change that to empty string) when empty
 	fs.IntVar(&c.devIndex, "dev-index", 0, "device index when enumerating")
 	fs.StringVar(&c.devIdentity, "dev-identity", "", "device identity is the I2C address or the bus number for the SWI interface device")
