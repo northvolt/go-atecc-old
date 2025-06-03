@@ -10,8 +10,8 @@ import (
 	"io"
 	"strings"
 
-	"github.com/northvolt/go-atecc/pkg/atecc"
-	"github.com/northvolt/go-atecc/pkg/ateccconf"
+	"github.com/Scania-Goldcup/go-atecc/pkg/atecc"
+	"github.com/Scania-Goldcup/go-atecc/pkg/ateccconf"
 	"github.com/peterbourgon/ff/v3/ffcli"
 )
 

@@ -3,10 +3,10 @@
 [![pkg.go.dev][docs-badge]][docs-url]
 [![Apache licensed][license-badge]][license-url]
 
-[docs-badge]: https://pkg.go.dev/badge/github.com/northvolt/go-atecc.svg
-[docs-url]: https://pkg.go.dev/github.com/northvolt/go-atecc
+[docs-badge]: https://pkg.go.dev/badge/github.com/Scania-Goldcup/go-atecc.svg
+[docs-url]: https://pkg.go.dev/github.com/Scania-Goldcup/go-atecc
 [license-badge]: https://img.shields.io/badge/license-Apache-blue.svg
-[license-url]: https://github.com/northvolt/go-atecc/blob/main/LICENSE
+[license-url]: https://github.com/Scania-Goldcup/go-atecc/blob/main/LICENSE
 
 Package atecc is a driver for the Microchip ATECC608 device in Go.
 

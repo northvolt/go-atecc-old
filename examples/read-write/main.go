@@ -8,8 +8,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/northvolt/go-atecc/pkg/atecc"
-	"github.com/northvolt/go-atecc/pkg/ateccconf"
+	"github.com/Scania-Goldcup/go-atecc/pkg/atecc"
+	"github.com/Scania-Goldcup/go-atecc/pkg/ateccconf"
 	"periph.io/x/conn/v3/i2c/i2creg"
 	"periph.io/x/host/v3"
 )

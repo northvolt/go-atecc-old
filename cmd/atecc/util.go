@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/northvolt/go-atecc/pkg/atecc"
+	"github.com/Scania-Goldcup/go-atecc/pkg/atecc"
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"periph.io/x/conn/v3/i2c/i2creg"
 	"periph.io/x/host/v3"

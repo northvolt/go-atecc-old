@@ -1,4 +1,4 @@
-module github.com/northvolt/go-atecc
+module github.com/Scania-Goldcup/go-atecc
 
 go 1.20
 

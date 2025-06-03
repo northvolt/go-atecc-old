@@ -15,7 +15,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/northvolt/go-atecc/pkg/ateccconf"
+	"github.com/Scania-Goldcup/go-atecc/pkg/ateccconf"
 	"golang.org/x/crypto/cryptobyte"
 	"golang.org/x/crypto/cryptobyte/asn1"
 )
