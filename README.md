@@ -1,3 +1,8 @@
+# Warning
+This repo was renamed to -old and archived on 31-03-2026, since we've recieved an updated version of this repository from Scania.
+
+See [go-atecc](https://github.com/northvolt/go-atecc) for the new repository.
+
 # atecc
 
 [![pkg.go.dev][docs-badge]][docs-url]
